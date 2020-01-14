@@ -26,8 +26,10 @@ class App extends Component {
     if (pickedCard[0].picked === true){
       // Reset score to 0
       score = 0;
-
+      this.setState({ score });
+      this.setState({ topScore });
       gameText = "Oh no! You already picked that card! Try again."
+      this.setState({ gameText });
 
       // Reset all cards picked value to false
       cards.forEach(card => card.picked = false);
@@ -35,13 +37,31 @@ class App extends Component {
       console.log("Card already picked");
       console.log("score: " + score + " | topScore: " + topScore);
     }
-    else if (score < 12){
+    else if (score < 11){
       score++;
-      gameText = "Great! Keep going!";
+      this.setState({ score });
+      topScore = score;
+      this.setState({ topScore });
+      gameText = "Great job! Keep it up!";
+      this.setState({ gameText });
 
       // Set card picked value to true
       pickedCard[0].picked = true;
       console.log("picked value: " + pickedCard[0].picked);
+    }
+    else {
+      // Reset score
+      score = 0;
+      this.setState({ score });
+      // Set topScore to 12
+      topScore = 12;
+      this.setState({ topScore });
+      gameText = "Amazing! That's a good memory you have there! Play again!";
+      this.setState({ gameText });
+
+      // Reset cards picked value to false
+      cards.forEach(card => card.picked = false);
+
     }
 
     // Randomize the card order
