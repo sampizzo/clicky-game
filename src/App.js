@@ -82,7 +82,9 @@ class App extends Component {
     return (
       <Wrapper>
         <Title>Teen Titans GO! Clicky Game</Title>
-        <h2>Score: {this.state.score} | Top Score: {this.state.topScore}</h2>
+        <h1>Score: {this.state.score} | Top Score: {this.state.topScore}</h1>
+        <h1>{this.state.gameText}</h1>
+        <div className="game">
         {this.state.cards.map(card => (
           <CharacterCard
             pickCard={this.pickCard}
@@ -92,6 +94,7 @@ class App extends Component {
             image={card.image}
           />
         ))}
+        </div>
       </Wrapper>
     );
   }
