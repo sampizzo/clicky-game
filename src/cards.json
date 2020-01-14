@@ -2,61 +2,73 @@
   {
     "id": 1,
     "name": "Robin 01",
-    "image": "./ttg-gifs/robin01.gif"
+    "image": "./ttg-gifs/robin01.gif",
+    "picked": true
   },
   {
     "id": 2,
     "name": "Robin 02",
-    "image": "./ttg-gifs/robin02.gif"
+    "image": "./ttg-gifs/robin02.gif",
+    "picked": false
   },
   {
     "id": 3,
     "name": "Robin 03",
-    "image": "./ttg-gifs/robin03.gif"
+    "image": "./ttg-gifs/robin03.gif",
+    "picked": false
   },
   {
     "id": 4,
     "name": "Raven 01",
-    "image": "./ttg-gifs/raven01.gif"
+    "image": "./ttg-gifs/raven01.gif",
+    "picked": false
   },
   {
     "id": 5,
     "name": "Raven 02",
-    "image": "./ttg-gifs/raven02.gif"
+    "image": "./ttg-gifs/raven02.gif",
+    "picked": false
   },
   {
     "id": 6,
     "name": "Cyborg 01",
-    "image": "./ttg-gifs/cyborg01.gif"
+    "image": "./ttg-gifs/cyborg01.gif",
+    "picked": false
   },
   {
     "id": 7,
     "name": "Cyborg 02",
-    "image": "./ttg-gifs/cyborg02.gif"
+    "image": "./ttg-gifs/cyborg02.gif",
+    "picked": false
   },
   {
     "id": 8,
     "name": "Starfire 01",
-    "image": "./ttg-gifs/starfire01.gif"
+    "image": "./ttg-gifs/starfire01.gif",
+    "picked": false
   },
   {
     "id": 9,
     "name": "Starfire 02",
-    "image": "./ttg-gifs/starfire02.gif"
+    "image": "./ttg-gifs/starfire02.gif",
+    "picked": false
   },
   {
     "id": 10,
     "name": "Beast Boy 01",
-    "image": "./ttg-gifs/beastboy01.gif"
+    "image": "./ttg-gifs/beastboy01.gif",
+    "picked": false
   },
   {
     "id": 11,
     "name": "Beast Boy 02",
-    "image": "./ttg-gifs/beastboy02.gif"
+    "image": "./ttg-gifs/beastboy02.gif",
+    "picked": false
   },
   {
     "id": 12,
     "name": "Teen Titans GO!",
-    "image": "./ttg-gifs/ttg.gif"
+    "image": "./ttg-gifs/ttg.gif",
+    "picked": false
   }
 ]

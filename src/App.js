@@ -11,7 +11,7 @@ class App extends Component {
     cards,
     score: 0,
     topScore: 0,
-    gameText: "See if you can click each card once!"
+    gameText: "Pick cards to earn points, but don't click the same card twice!"
   };
 
   pickCard = id => {
@@ -19,6 +19,19 @@ class App extends Component {
 
     // Filter this.state.cards for cards with an id equal to the id being picked
     const pickedCard = this.state.cards.filter(card => card.id === id);
+
+    if (pickedCard[0].picked === true){
+      // score = 0;
+      // gameText = "Oh no! You already picked that card! Try again."
+      cards.forEach(card => card.picked = false);
+      // cards.forEach(function(card, i){
+      //   card.picked = false;
+      // })
+      console.log(cards);
+
+      console.log("Card already picked");
+      // console.log("score: " + score + " | topScore: " + topScore);
+    }
 
     // Randomize the card order
     cards.sort(function(a, b){return 0.5 - Math.random()});
