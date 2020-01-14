@@ -6,7 +6,7 @@ import cards from "./cards.json";
 
 let score = 0;
 let topScore = 0;
-let gameText = "Pick cards to earn points, but don't click the same card twice!";
+let gameText = "Click cards to earn points, but don't click the same card twice!";
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
