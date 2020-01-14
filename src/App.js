@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "./components/Header";
 import CharacterCard from "./components/CharacterCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
@@ -40,7 +39,12 @@ class App extends Component {
     else if (score < 11){
       score++;
       this.setState({ score });
-      topScore = score;
+
+      // Only change topScore if greater than current topScore
+      if (score > topScore){
+        topScore = score;
+      }
+      
       this.setState({ topScore });
       gameText = "Great job! Keep it up!";
       this.setState({ gameText });
@@ -78,7 +82,7 @@ class App extends Component {
     return (
       <Wrapper>
         <Title>Teen Titans GO! Clicky Game</Title>
-        <Header />
+        <h2>Score: {this.state.score} | Top Score: {this.state.topScore}</h2>
         {this.state.cards.map(card => (
           <CharacterCard
             pickCard={this.pickCard}
