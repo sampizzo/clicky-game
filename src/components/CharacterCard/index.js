@@ -3,6 +3,7 @@ import "./style.css";
 
 function CharacterCard(props) {
   return (
+    
     <div className="card">
       <span onClick={() => props.pickCard(props.id)} >
         <div className="img-container">
@@ -10,6 +11,7 @@ function CharacterCard(props) {
         </div>
       </span>
     </div>
+    
   );
 }
 

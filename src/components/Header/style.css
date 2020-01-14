@@ -9,8 +9,7 @@
   position: relative;
   width: 150px;
   box-shadow: 0 2px 4px #999, 0 2px 4px #999;
-  text-align: center;
-  justify-content: center;
+  text-align: left;
 }
 
 .card > .img-container {

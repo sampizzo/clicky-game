@@ -1,33 +1,40 @@
 import React, { Component } from "react";
+import Header from "./components/Header";
 import CharacterCard from "./components/CharacterCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import cards from "./cards.json";
 
-let score = 0;
-let topScore = 0;
-let gameText = "Click each card one time only!"
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     cards,
-    score,
-    topScore,
-    gameText
+    score: 0,
+    topScore: 0,
+    gameText: "See if you can click each card once!"
   };
 
   pickCard = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const cards = this.state.cards.filter(card => card.id !== id);
-    // Set this.state.friends equal to the new friends array
+    const cards = this.state.cards;
+
+    // Filter this.state.cards for cards with an id equal to the id being picked
+    const pickedCard = this.state.cards.filter(card => card.id === id);
+
+    // Randomize the card order
+    cards.sort(function(a, b){return 0.5 - Math.random()});
+
+    // Set this.state.cards equal to the new cards array
     this.setState({ cards });
+    console.log(cards);
+    console.log(pickedCard);
   };
 
-  // Map over this.state.friends and render a CharacterCard component for each friend object
+  // Map over this.state.cards and render a CharacterCard component for each card object
   render() {
     return (
       <Wrapper>
         <Title>Teen Titans GO! Clicky Game</Title>
+        <Header />
         {this.state.cards.map(card => (
           <CharacterCard
             pickCard={this.pickCard}
