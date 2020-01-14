@@ -5,13 +5,16 @@ import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import cards from "./cards.json";
 
+let score = 0;
+let topScore = 0;
+let gameText = "Pick cards to earn points, but don't click the same card twice!";
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     cards,
-    score: 0,
-    topScore: 0,
-    gameText: "Pick cards to earn points, but don't click the same card twice!"
+    score,
+    topScore,
+    gameText
   };
 
   pickCard = id => {
@@ -21,16 +24,24 @@ class App extends Component {
     const pickedCard = this.state.cards.filter(card => card.id === id);
 
     if (pickedCard[0].picked === true){
-      // score = 0;
-      // gameText = "Oh no! You already picked that card! Try again."
+      // Reset score to 0
+      score = 0;
+
+      gameText = "Oh no! You already picked that card! Try again."
+
+      // Reset all cards picked value to false
       cards.forEach(card => card.picked = false);
-      // cards.forEach(function(card, i){
-      //   card.picked = false;
-      // })
-      console.log(cards);
 
       console.log("Card already picked");
-      // console.log("score: " + score + " | topScore: " + topScore);
+      console.log("score: " + score + " | topScore: " + topScore);
+    }
+    else if (score < 12){
+      score++;
+      gameText = "Great! Keep going!";
+
+      // Set card picked value to true
+      pickedCard[0].picked = true;
+      console.log("picked value: " + pickedCard[0].picked);
     }
 
     // Randomize the card order

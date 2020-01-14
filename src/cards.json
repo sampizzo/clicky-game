@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Robin 01",
     "image": "./ttg-gifs/robin01.gif",
-    "picked": true
+    "picked": false
   },
   {
     "id": 2,
